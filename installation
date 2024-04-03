@@ -33,3 +33,35 @@ Default Sonarqube credentials
       Username: admin
       Password: admin
 After login change the default password for Best practice 
+
+
+
+
+
+
+=============SHELL SCRIPT=============
+#!/bin/bash
+
+# Step 1: Switch to root user
+sudo -i
+
+# Step 2: Download and install Java 17
+wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.rpm
+rpm -i jdk-17_linux-x64_bin.rpm
+
+# Step 3: Download and install SonarQube
+cd /opt
+sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.9.1.69595.zip
+sudo unzip sonarqube-9.9.1.69595.zip
+sudo chown -R sonaradmin:sonargroup sonarqube-9.9.1.69595
+
+# Step 4: Create a user for SonarQube and set ownership
+sudo useradd sonaradmin
+sudo passwd sonaradmin
+sudo addgroup sonargroup
+sudo chown -R sonaradmin:sonargroup sonarqube-9.9.1.69595
+
+# Step 5: Start SonarQube
+sudo -u sonaradmin /opt/sonarqube-9.9.1.69595/bin/linux-x86-64/sonar.sh start
+
+echo "SonarQube installation completed."
