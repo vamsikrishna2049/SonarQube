@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#after the script, you need to create passwd for sonaradmin
+#passwd sonaradmin
+
+# Update the system
+sudo dnf update -y 
+
+# Install required packages
+sudo dnf install unzip java-17-amazon-corretto git -y
+
+# Change to the /opt directory
+cd /opt
+
+# Download and extract SonarQube
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
+unzip sonarqube-10.5.1.90531.zip
+rm sonarqube-10.5.1.90531.zip
+
+# Create a user and group for SonarQube
+sudo groupadd sonargroup
+sudo useradd -r -s /bin/false -g sonargroup sonaradmin
+
+# Set ownership of SonarQube directory
+sudo chown -R sonaradmin:sonargroup sonarqube-10.5.1.90531
+
+# Start SonarQube
+sudo -u sonaradmin /opt/sonarqube-10.5.1.90531/bin/linux-x86-64/sonar.sh start
+
+echo "SonarQube installation completed."
