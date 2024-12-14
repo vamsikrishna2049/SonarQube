@@ -76,19 +76,19 @@ su sonaradmin
 ```
 
 ### Step 9: Start SonarQube
-1. start SonarQube using the following command:
+1. start SonarQube using the following command: (Navigate to /opt/sonarqube-9.9.1.69595/bin/linux-x86-64/)
 ``` xml
-sh /opt/sonarqube-9.9.1.69595/bin/linux-x86-64/sonar.sh start
+./sonar.sh start
 ```
 
-2. status SonarQube using the following command:
+2. status SonarQube using the following command: (Navigate to /opt/sonarqube-9.9.1.69595/bin/linux-x86-64/)
 ``` xml
-sh /opt/sonarqube-9.9.1.69595/bin/linux-x86-64/sonar.sh status
+./sonar.sh status
 ```
 
-3. stop SonarQube using the following command:
+3. stop SonarQube using the following command: (Navigate to /opt/sonarqube-9.9.1.69595/bin/linux-x86-64/)
 ``` xml
-sh /opt/sonarqube-9.9.1.69595/bin/linux-x86-64/sonar.sh stop
+./sonar.sh stop
 ```
 
 ### Step 10: Access SonarQube from Browser
