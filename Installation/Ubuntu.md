@@ -98,8 +98,10 @@ http://<your-ec2-public-ip>:9000
 ```
 
 ### Default SonarQube Credentials:
-Username: admin
-Password: admin
-
+Username & Password 
+```xml
+admin
+```
+<br>
 #### Note:
 After logging in, it is strongly recommended to change the default password for security best practices.
