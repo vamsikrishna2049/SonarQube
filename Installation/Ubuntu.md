@@ -31,7 +31,7 @@
 ### Step 5: Install Java 17 (as root user)
 1. Change to the root user:
 ``` xml
-sudo -i or sudo su -
+sudo su -
 ```
 2. Download the Java 17 RPM:
 ``` xml
@@ -70,15 +70,25 @@ sudo chown -R sonaradmin:sonargroup /opt/sonarqube-9.9.1.69595
 ```
 
 ### Step 8: Switch to SonarQube User
-Switch to the sonaradmin user to run SonarQube:
+switch to the sonaradmin user to run SonarQube:
 ``` xml
 su sonaradmin
 ```
 
 ### Step 9: Start SonarQube
-Start SonarQube using the following command:
+1. start SonarQube using the following command:
 ``` xml
 sh /opt/sonarqube-9.9.1.69595/bin/linux-x86-64/sonar.sh start
+```
+
+2. status SonarQube using the following command:
+``` xml
+sh /opt/sonarqube-9.9.1.69595/bin/linux-x86-64/sonar.sh status
+```
+
+3. stop SonarQube using the following command:
+``` xml
+sh /opt/sonarqube-9.9.1.69595/bin/linux-x86-64/sonar.sh stop
 ```
 
 ### Step 10: Access SonarQube from Browser
