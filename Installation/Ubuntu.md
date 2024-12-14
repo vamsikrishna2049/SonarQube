@@ -33,7 +33,12 @@
 ``` xml
 sudo su -
 ```
-2. Download the Java 17 RPM:
+2. Update and Install Required packages
+```xml
+sudo apt update -y && sudo apt-get upgrade -y 
+sudo apt install -y unzip net-tools
+```  
+3. Download the Java 17 RPM:
 ``` xml
 sudo apt install openjdk-17-jre-headless -y
 ```
