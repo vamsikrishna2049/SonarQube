@@ -60,8 +60,7 @@ sudo unzip sonarqube-9.9.1.69595.zip
 ### Step 7: Create a User for SonarQube and Set Permissions
 1. Create a user for SonarQube:
 ``` xml
-sudo useradd sonaradmin
-sudo passwd sonaradmin
+sudo adduser sonaradmin
 ```
 
 2. Create a group for SonarQube:
